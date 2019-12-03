@@ -26,11 +26,14 @@ function makeRequest(city) {
 
 function resultHandle(result) {
     let response = JSON.parse(result.responseText);
-    let city = response.name;
-    let temperature = response.main.temp;
 
-    console.log(city);
-    console.log(temperature);
+    let data = {
+        city: response.name,
+        temp: (response.main.temp).toFixed(1),
+    };
+
+    let template = doT.template(document.getElementById('infoTemplate').text, undefined);
+    document.getElementById('info').innerHTML = template(data);
 
 }
 
