@@ -7,9 +7,11 @@ window.onload = function () {
 
         let city = document.getElementById('cityName').value;
         let result = makeRequest(city);
-        let result_parsed = JSON.parse(result.responseText);
-        
-        console.log(result_parsed);
+
+        if (result.status === 200)
+            resultHandle(result);
+        else
+            errorHandle(result);
     });
 };
 
@@ -20,4 +22,18 @@ function makeRequest(city) {
     request.send();
 
     return request;
+}
+
+function resultHandle(result) {
+    let response = JSON.parse(result.responseText);
+    let city = response.name;
+    let temperature = response.main.temp;
+
+    console.log(city);
+    console.log(temperature);
+
+}
+
+function errorHandle(result) {
+
 }
