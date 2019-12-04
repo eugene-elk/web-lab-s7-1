@@ -26,17 +26,21 @@ function makeRequest(city) {
 
 function resultHandle(result) {
     let response = JSON.parse(result.responseText);
-
     let data = {
         city: response.name,
         temp: (response.main.temp).toFixed(1),
     };
-
-    let template = doT.template(document.getElementById('infoTemplate').text, undefined);
-    document.getElementById('info').innerHTML = template(data);
-
+    fillTemplate('infoTemplate','info', data);
 }
 
 function errorHandle(result) {
+    let data = {
+        code: result.status,
+    };
+    fillTemplate('errorTemplate','info', data);
+}
 
+function fillTemplate(elementTemplate, elementContent, data) {
+    let template = doT.template(document.getElementById(elementTemplate).text, undefined);
+    document.getElementById(elementContent).innerHTML = template(data);
 }
