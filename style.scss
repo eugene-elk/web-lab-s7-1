@@ -1,4 +1,7 @@
 $main-font: 'Verdana';
+$black-color: #2b2b2b;
+$blue1-color: #7DBFED;
+$blue2-color: #7BBFED;
 
 body {
   padding-left: 10%;
@@ -10,29 +13,56 @@ body {
 .header {
   height: 50px;
   width: 100%;
-  box-shadow: 0 0 5px 0 #2b2b2b;
+  box-shadow: 0 0 5px 0 $black-color;
   min-width: 340px;
   background-color: #EDBF7B;
-}
 
-p {
-  font-family: $main-font;
-  margin: 0;
-  padding-top: 13px;
-  padding-left: 30px;
-  font-size: 15pt;
-  font-weight: bold;
+  p {
+    font-family: $main-font;
+    margin: 0;
+    padding-top: 13px;
+    padding-left: 30px;
+    font-size: 15pt;
+    font-weight: bold;
+  }
 }
 
 #form {
   margin-top: 10px;
   padding-left: 30px;
-}
 
-#search {
-  font-family: $main-font;
-  font-size: 12pt;
-  font-weight: bold;
+  #search {
+    font-family: $main-font;
+    font-size: 12pt;
+    font-weight: bold;
+
+    /* поиск */
+    #cityName {
+      font-family: $main-font;
+      height: 17pt;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      margin-top: 3px;
+      width: 25%;
+      color: $black-color;
+      padding-left: 10px;
+      font-size: 12pt;
+    }
+  }
+
+  /* кнопка поиска */
+  .button {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding-top: 3px;
+    margin-left: 3px;
+    background: #eaeef1;
+    background-image: linear-gradient($blue1-color, $blue2-color);
+    border-radius: 3px;
+    color: white;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.2), inset 0 1px 2px rgba(255,255,255,.7);
+  }
 }
 
 .content {
@@ -46,7 +76,6 @@ p {
   width: 100%;
   min-width: 340px;
   white-space: nowrap;
-  z-index: 2;
 
   .contentElement {
     font-family: $main-font;
@@ -57,8 +86,8 @@ p {
     padding-right: 10px;
     margin-left: 10px;
 
-    background-color: #7DBFED;
-    box-shadow: 0 0 5px 0 #2b2b2b;
+    background-color: $blue1-color;
+    box-shadow: 0 0 5px 0 $black-color;
   }
 
   .contentSpacer {
@@ -66,29 +95,5 @@ p {
   }
 }
 
-/* поиск */
-#cityName {
-  font-family: $main-font;
-  height: 17pt;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  margin-top: 3px;
-  width: 25%;
-  color: #2b2b2b;
-  padding-left: 10px;
-  font-size: 12pt;
-}
 
-/* кнопка поиска */
-.button {
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  padding-top: 3px;
-  margin-left: 3px;
-  background: #eaeef1;
-  background-image: linear-gradient(#7DBFED, #7BBFED);
-  border-radius: 3px;
-  color: white;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.2), inset 0 1px 2px rgba(255,255,255,.7);
-}
+
