@@ -30,6 +30,7 @@ function resultHandle(result) {
     let data = {
         city: response.name,
         temp: (response.main.temp - 273.1).toFixed(1),
+        desc: (response.weather[0].description),
         wind: (response.wind.speed),
         pres: (response.main.pressure),
         hum: (response.main.humidity)
@@ -47,6 +48,6 @@ function errorHandle(result) {
 }
 
 function fillTemplate(elementTemplate, elementContent, data) {
-    let template = doT.template(document.getElementById(elementTemplate).text, undefined);
+    let template = doT.template(document.getElementById(elementTemplate).text);
     document.getElementById(elementContent).innerHTML = template(data);
 }

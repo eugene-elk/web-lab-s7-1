@@ -1,0 +1,23 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #EEEEEE;
+    margin: 0px 8px 8px 8px;
+}
+
+.header {
+    font-family: Calibri;
+    height: 50px;
+    width: 100%;
+    box-shadow: 0 0 5px 0 #2b2b2b;
+    min-width: 340px;
+    background-color: #EDBF7B;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+p {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+}
