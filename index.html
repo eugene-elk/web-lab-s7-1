@@ -9,10 +9,14 @@
     <script id="infoTemplate" type="text/x-dot-template">
         <div id="City">City: {{=it.city}}</div>
         <div id="Temp">Temperature: {{=it.temp}}</div>
+        <div id="Wind">Wind: {{=it.wind}}</div>
+        <div id="Pressure">Pressure: {{=it.pres}}</div>
+        <div id="Humidity">Humidity: {{=it.hum}}</div>
     </script>
 
     <script id="errorTemplate" type="text/x-dot-template">
         <div id="Error">Error {{=it.code}}</div>
+        <div id="errText">{{=it.text}}</div>
     </script>
 </head>
 <body>
@@ -22,5 +26,7 @@
     </form>
 
     <div id="info"></div>
+
+
 </body>
 </html>

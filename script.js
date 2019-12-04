@@ -26,16 +26,22 @@ function makeRequest(city) {
 
 function resultHandle(result) {
     let response = JSON.parse(result.responseText);
+    console.log(response);
     let data = {
         city: response.name,
-        temp: (response.main.temp).toFixed(1),
+        temp: (response.main.temp - 273.1).toFixed(1),
+        wind: (response.wind.speed),
+        pres: (response.main.pressure),
+        hum: (response.main.humidity)
     };
     fillTemplate('infoTemplate','info', data);
 }
 
 function errorHandle(result) {
+    console.log(result);
     let data = {
         code: result.status,
+        text: result.statusText
     };
     fillTemplate('errorTemplate','info', data);
 }
