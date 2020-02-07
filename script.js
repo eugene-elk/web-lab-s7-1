@@ -26,7 +26,7 @@ function makeRequest(city) {
 
 function resultHandle(result) {
     let response = JSON.parse(result.responseText);
-    console.log(response);
+    // console.log(response);
     let data = {
         city: response.name,
         temp: (response.main.temp - 273.1).toFixed(1),
@@ -39,7 +39,7 @@ function resultHandle(result) {
 }
 
 function errorHandle(result) {
-    console.log(result);
+    // console.log(result);
     let data = {
         code: result.status,
         text: result.statusText
